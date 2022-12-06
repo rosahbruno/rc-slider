@@ -1,4 +1,5 @@
 import * as React from 'react';
+import 'rc-tooltip/assets/bootstrap.css';
 export interface DotProps {
     prefixCls: string;
     value: number;

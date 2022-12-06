@@ -2,6 +2,7 @@ import _defineProperty from "@babel/runtime/helpers/esm/defineProperty";
 import _objectSpread from "@babel/runtime/helpers/esm/objectSpread2";
 import * as React from 'react';
 import Tooltip from 'rc-tooltip';
+import 'rc-tooltip/assets/bootstrap.css';
 import classNames from 'classnames';
 import { getDirectionStyle } from '../util';
 import SliderContext from '../context';
