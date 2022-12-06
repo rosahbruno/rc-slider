@@ -197,7 +197,8 @@ const Slider = React.forwardRef((props: SliderProps, ref: React.Ref<SliderRef>) 
         ) {
           markObj.style = mark.style;
           markObj.label = mark.label;
-        } else {
+          markObj.hoverContent = mark.hoverContent;
+        } else if (!(mark as MarkObj).hoverContent) {
           markObj.label = mark;
         }
 

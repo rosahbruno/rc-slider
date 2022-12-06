@@ -4,10 +4,12 @@ import Mark from './Mark';
 export interface MarkObj {
   style?: React.CSSProperties;
   label?: React.ReactNode;
+  hoverContent?: string;
 }
 
 export interface InternalMarkObj extends MarkObj {
   value: number;
+  hoverContent?: string;
 }
 
 export interface MarksProps {

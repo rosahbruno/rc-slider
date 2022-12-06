@@ -17,6 +17,25 @@ const marks = {
   },
 };
 
+const marksWithHover = {
+  0: {
+    label: '0',
+    hoverContent: 'event1',
+  },
+  10: {
+    label: '10',
+    hoverContent: 'event2',
+  },
+  20: {
+    label: '20',
+    hoverContent: 'event3',
+  },
+  150: {
+    label: '150',
+    hoverContent: 'event4',
+  },
+};
+
 function log(value) {
   console.log(value); //eslint-disable-line
 }
@@ -68,6 +87,18 @@ export default () => (
     <div style={style}>
       <p>Range with marks and steps</p>
       <Slider range min={-10} marks={marks} step={10} onChange={log} defaultValue={[20, 40]} />
+    </div>
+
+    <div style={style}>
+      <p>Range with marks and hover</p>
+      <Slider
+        range
+        min={0}
+        max={150}
+        marks={marksWithHover}
+        onChange={log}
+        defaultValue={[0, 15]}
+      />
     </div>
   </div>
 );
