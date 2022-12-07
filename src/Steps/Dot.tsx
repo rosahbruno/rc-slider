@@ -11,10 +11,11 @@ export interface DotProps {
   style?: React.CSSProperties | ((dotValue: number) => React.CSSProperties);
   activeStyle?: React.CSSProperties | ((dotValue: number) => React.CSSProperties);
   hoverContent?: string;
+  hoverLabel?: string;
 }
 
 export default function Dot(props: DotProps) {
-  const { prefixCls, value, style, activeStyle, hoverContent } = props;
+  const { prefixCls, value, style, activeStyle, hoverContent, hoverLabel } = props;
   const { min, max, direction, included, includedStart, includedEnd } =
     React.useContext(SliderContext);
 
@@ -43,7 +44,7 @@ export default function Dot(props: DotProps) {
           <span>
             {hoverContent}
             <br />
-            {value}
+            {hoverLabel}
           </span>
         }
       >

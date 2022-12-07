@@ -23,10 +23,13 @@ export default function Steps(props: StepsProps) {
 
       // Add marks with extras
       marks.forEach((mark) => {
-        const { value, hoverContent } = mark;
+        const { value, hoverContent, label } = mark;
         dotArr.push({
           value,
           hoverContent,
+          ...(typeof label === 'string' && {
+            hoverLabel: label,
+          }),
         });
       });
 
@@ -84,6 +87,7 @@ export default function Steps(props: StepsProps) {
               }}
               // Pass along the extra data to display in the tooltip.
               hoverContent={dotValue.hoverContent}
+              hoverLabel={dotValue.hoverLabel}
             />
           );
         }
