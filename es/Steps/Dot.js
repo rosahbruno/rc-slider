@@ -11,7 +11,8 @@ export default function Dot(props) {
     value = props.value,
     style = props.style,
     activeStyle = props.activeStyle,
-    hoverContent = props.hoverContent;
+    hoverContent = props.hoverContent,
+    hoverLabel = props.hoverLabel;
   var _React$useContext = React.useContext(SliderContext),
     min = _React$useContext.min,
     max = _React$useContext.max,
@@ -30,7 +31,7 @@ export default function Dot(props) {
     return /*#__PURE__*/React.createElement(Tooltip, {
       placement: "bottom",
       trigger: ['hover'],
-      overlay: /*#__PURE__*/React.createElement("span", null, hoverContent, /*#__PURE__*/React.createElement("br", null), value)
+      overlay: /*#__PURE__*/React.createElement("span", null, hoverContent, /*#__PURE__*/React.createElement("br", null), hoverLabel)
     }, /*#__PURE__*/React.createElement("span", {
       className: classNames(dotClassName, _defineProperty({}, "".concat(dotClassName, "-active"), active)),
       style: _objectSpread(_objectSpread({}, mergedStyle), {

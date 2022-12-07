@@ -7,6 +7,7 @@ export interface MarkObj {
 export interface InternalMarkObj extends MarkObj {
     value: number;
     hoverContent?: string;
+    hoverLabel?: string;
 }
 export interface MarksProps {
     prefixCls: string;

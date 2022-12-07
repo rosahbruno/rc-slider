@@ -6,5 +6,6 @@ export interface DotProps {
     style?: React.CSSProperties | ((dotValue: number) => React.CSSProperties);
     activeStyle?: React.CSSProperties | ((dotValue: number) => React.CSSProperties);
     hoverContent?: string;
+    hoverLabel?: string;
 }
 export default function Dot(props: DotProps): JSX.Element;

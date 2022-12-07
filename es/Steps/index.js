@@ -21,11 +21,14 @@ export default function Steps(props) {
       // Add marks with extras
       marks.forEach(function (mark) {
         var value = mark.value,
-          hoverContent = mark.hoverContent;
-        dotArr.push({
+          hoverContent = mark.hoverContent,
+          label = mark.label;
+        dotArr.push(_objectSpread({
           value: value,
           hoverContent: hoverContent
-        });
+        }, typeof label === 'string' && {
+          hoverLabel: label
+        }));
       });
       // In our case, there will never be a step when there
       // is a hover. So we don't need to address that case
@@ -74,7 +77,8 @@ export default function Steps(props) {
         })
         // Pass along the extra data to display in the tooltip.
         ,
-        hoverContent: dotValue.hoverContent
+        hoverContent: dotValue.hoverContent,
+        hoverLabel: dotValue.hoverLabel
       });
     }
   }));
