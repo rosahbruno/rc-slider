@@ -4,10 +4,13 @@ import Mark from './Mark';
 export interface MarkObj {
   style?: React.CSSProperties;
   label?: React.ReactNode;
+  hoverContent?: string;
 }
 
 export interface InternalMarkObj extends MarkObj {
   value: number;
+  hoverContent?: string;
+  hoverLabel?: string;
 }
 
 export interface MarksProps {
@@ -29,13 +32,7 @@ export default function Marks(props: MarksProps) {
   return (
     <div className={markPrefixCls}>
       {marks.map(({ value, style, label }) => (
-        <Mark
-          key={value}
-          prefixCls={markPrefixCls}
-          style={style}
-          value={value}
-          onClick={onClick}
-        >
+        <Mark key={value} prefixCls={markPrefixCls} style={style} value={value} onClick={onClick}>
           {label}
         </Mark>
       ))}
